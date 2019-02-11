@@ -1,4 +1,5 @@
 <?php
+require_once 'class.php';
 
 $class = new Do0('API KEY'); // API key passed to the class
 echo $class->buildURL()->getApiURL() .'<br>'; // Builds API url and prints it
