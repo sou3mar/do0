@@ -1,20 +1,10 @@
 <?php
-class ErrorHandler extends Exception {
-    public $message = '';
-
-    public function __construct($txt){
-        $this->message = $txt;
-    }
-    public function show(){
-        return $this->message;
-    }
-}
 
 class Do0 {
-    public $api_key = '';
-    public $api_url = 'https://do0.ir/post/';
-    public $api_version = '';
-    public $version_file = 'version.txt';
+    private $api_key      = '';
+    private $api_url      = 'https://do0.ir/post/';
+    private $api_version  = '';
+    private $version_file = __DIR__.'version.txt';  // path of the version file
 
     public function __construct($key = ''){
         $this->api_key = $key;
@@ -84,5 +74,16 @@ class Do0 {
         }
     }
 
+}
+
+class ErrorHandler extends Exception {
+    public $message = '';
+
+    public function __construct($txt){
+        $this->message = $txt;
+    }
+    public function show(){
+        return $this->message;
+    }
 }
 ?>
